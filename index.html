@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Load Bootstrap style-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Load the latest version of TensorFlow.js -->
+  <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+  <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+  <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <p class="navbar-brand">Finger Counter</a>
+    </div>
+  </nav>
+
+  <div class='container'>
+    <div class="row">
+      <h1>Let me learn to count your fingers!</h1>
+      <p> Teach me by showing me your and with some fingers extended and tell me how many fingers you are extending. So I can learn.</p>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class="col-6">
+        <div id='loader' class="d-flex flex-column align-items-center justify-content-center">
+          <div class="row">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <div class="row">
+            <strong>Hold on...Loading my brain</strong>
+          </div>
+        </div>
+        <video autoplay playsinline muted id="webcam" width="100%" height="100%"></video>
+      </div>
+      <div class="col-2">
+        <div class="btn-group-vertical mt-1" role="group" aria-label="Classification buttons">
+          <button class='btn btn-primary ' id="class-0">No fingers</button>
+          <button class='btn btn-primary ' id="class-1">1 Finger</button>
+          <button class='btn btn-primary ' id="class-2">2 Fingers</button>
+          <button class='btn btn-primary ' id="class-3">3 Fingers</button>
+          <button class='btn btn-primary ' id="class-4">4 Fingers</button>
+          <button class='btn btn-primary ' id="class-5">5 Fingers</button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div hidden=true id="console" class='alert alert-info '></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class='navbar navbar-dark bg-dark fixed-bottom'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-6'>
+          <p class="navbar-brand">Bill Matthews</p>
+        </div>
+        <div class='col-4'>
+          <div class='btn-group'>
+            <a class="btn" target="_blank" href="https://twitter.com/bill_matthews">
+              <i class="fa fa-twitter" style="font-size:36px"></i>
+            </a>
+            <a class="btn" target="_blank" href="https://github.com/billmatthews">
+              <i class="fa fa-github" style="font-size:36px"></i>
+            </a>
+            <a class="btn" target="_blank" href="https://linkedin.com/in/billmatthews">
+              <i class="fa fa-linkedin" style="font-size:36px"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+  <!-- Add an image that we will use to test -->
+  <!--
+    <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
+  -->
+  <!-- Load index.js after the content of the page -->
+  <script src="index.js"></script>
+  <!--Load Bootstrap javascript-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
