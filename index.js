@@ -1,7 +1,7 @@
 let net;
 const webcamElement = document.getElementById('webcam');
 const classifier = knnClassifier.create();
-const classes = ['No Fingers', '1 Finger', '2 Fingers', '3 Fingers', '4 Fingers', '5 Fingers'];
+const classes = ['No Guesture', 'Rock', 'Paper', 'Scissors', 'Lizard', 'Spoc'];
 let userFacing = true;
 
 async function startupWebcam() {
@@ -29,17 +29,13 @@ async function startupWebcam() {
 
 async function load_model() {
   loaderElement = document.getElementById('loader');
-  //webcamElement.style.display = 'none';
-  //loaderElement.style.display = 'block';
   console.log('Loading MobileNet...');
 
 
   // Load the model
   net = await mobilenet.load();
   console.log("MobileNet loaded successfully");
-  //loaderElement.style.display = 'none';
   loaderElement.remove();
-  //webcamElement.style.display = 'block';
 }
 async function app() {
   await load_model();
