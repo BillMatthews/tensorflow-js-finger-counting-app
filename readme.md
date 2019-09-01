@@ -36,3 +36,4 @@ The following is a list of future work that might be tackled
 - Ability to switch cameras
     - Currently this uses the default camera but it would be nice to be able to swap cameras
 - Add feature to play the game
+  - Maybe learn the game via RL (e.g. DDPG) and play
